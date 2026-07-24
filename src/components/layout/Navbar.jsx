@@ -82,19 +82,21 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16 lg:h-20 transition-all duration-300">
             
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 lg:w-11 lg:h-11 bg-gradient-to-br from-royalBlue to-cyan rounded-xl flex items-center justify-center shadow-md shadow-royalBlue/20 group-hover:shadow-royalBlue/40 transition-all duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-xl">E</span>
-              </div>
-              <div>
-                <span className="text-2xl font-extrabold text-darkBlue tracking-tight">
-                  Everst<span className="text-royalBlue">Tech</span>
-                </span>
-                <span className="block text-[10px] font-bold text-gray-500 tracking-[0.2em] uppercase -mt-0.5">
-                  Services
-                </span>
-              </div>
-            </Link>
+           <Link to="/" className="flex items-center gap-3 group">
+            <img
+              src="public/logo.png"
+              alt="Everst Tech Services"
+              className="h-10 lg:h-12 w-auto object-contain"
+            />
+            <div className="hidden sm:block">
+              <span className="text-2xl font-extrabold text-darkBlue tracking-tight">
+                Everst<span className="text-royalBlue">Tech</span>
+              </span>
+              <span className="block text-[10px] font-bold text-gray-500 tracking-[0.2em] uppercase -mt-0.5">
+                Services
+              </span>
+            </div>
+          </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1.5">
