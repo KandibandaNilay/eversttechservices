@@ -86,7 +86,7 @@ const Navbar = () => {
             <img
               src="public/logo.png"
               alt="Everst Tech Services"
-              className="h-10 lg:h-12 w-auto object-contain"
+              className="h-30 lg:h-12 w-auto object-contain"
             />
             <div className="hidden sm:block">
               <span className="text-2xl font-extrabold text-darkBlue tracking-tight">
