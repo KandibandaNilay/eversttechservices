@@ -24,132 +24,173 @@ const Footer = () => {
 
   const serviceLinks = servicesData.slice(0, 6);
 
+  // Animation variants for staggered rendering
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 text-gray-700">
+    <footer className="relative bg-slate-950 border-t border-slate-800/60 text-slate-300 overflow-hidden z-10">
+      {/* Subtle Ambient Background Glows */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none" />
+
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company Info */}
-          <div>
-            <Link to="/" className="flex items-center gap-2.5 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-royalBlue to-cyan rounded-xl flex items-center justify-center shadow-lg shadow-royalBlue/20">
-                <span className="text-white font-bold text-lg">E</span>
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          
+          {/* 1. Company Info */}
+          <motion.div variants={itemVariants}>
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                <span className="text-white font-bold text-xl">E</span>
               </div>
               <div>
-                <span className="text-xl font-extrabold text-darkBlue">Everst<span className="text-royalBlue">Tech</span></span>
-                <span className="block text-[10px] font-medium text-gray-500 tracking-widest -mt-0.5">SERVICES</span>
+                <span className="text-xl font-extrabold text-white">
+                  Everst<span className="text-cyan-400">Tech</span>
+                </span>
+                <span className="block text-[10px] font-bold text-slate-500 tracking-[0.2em] uppercase mt-0.5">
+                  Services
+                </span>
               </div>
             </Link>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              Empowering businesses with innovative technology solutions. We deliver excellence in software development, cloud services, and digital transformation.
+            
+            <p className="text-sm text-slate-400 leading-relaxed mb-6 font-light">
+              Architecting the digital future. We deliver enterprise-grade software development, cloud scale capabilities, and digital transformation.
             </p>
+            
+            {/* Social Icons - Glassmorphic Style */}
             <div className="flex items-center gap-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-white shadow-sm hover:bg-royalBlue hover:text-white transition flex items-center justify-center text-gray-600 hover:text-white border border-gray-200">
-                <FaFacebook size={16} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white shadow-sm hover:bg-royalBlue hover:text-white transition flex items-center justify-center text-gray-600 hover:text-white border border-gray-200">
-                <FaTwitter size={16} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white shadow-sm hover:bg-royalBlue hover:text-white transition flex items-center justify-center text-gray-600 hover:text-white border border-gray-200">
-                <FaLinkedin size={16} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white shadow-sm hover:bg-royalBlue hover:text-white transition flex items-center justify-center text-gray-600 hover:text-white border border-gray-200">
-                <FaYoutube size={16} />
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-white shadow-sm hover:bg-royalBlue hover:text-white transition flex items-center justify-center text-gray-600 hover:text-white border border-gray-200">
-                <FaInstagram size={16} />
-              </a>
+              {[FaFacebook, FaTwitter, FaLinkedin, FaYoutube, FaInstagram].map((Icon, idx) => (
+                <a 
+                  key={idx} 
+                  href="#" 
+                  className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-800 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-darkBlue font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2.5">
+          {/* 2. Quick Links */}
+          <motion.div variants={itemVariants}>
+            <h4 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link 
                     to={link.path} 
-                    className="text-sm text-gray-600 hover:text-royalBlue transition flex items-center gap-2 group"
+                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group"
                   >
-                    <FaArrowRight size={12} className="text-royalBlue/50 group-hover:text-royalBlue transition" />
+                    <FaArrowRight size={10} className="text-slate-700 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-darkBlue font-bold text-lg mb-4">Services</h4>
-            <ul className="space-y-2.5">
+          {/* 3. Services */}
+          <motion.div variants={itemVariants}>
+            <h4 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              Core Capabilities
+            </h4>
+            <ul className="space-y-3">
               {serviceLinks.map((service) => (
                 <li key={service.id}>
                   <Link 
                     to={`/services/${service.slug}`} 
-                    className="text-sm text-gray-600 hover:text-royalBlue transition flex items-center gap-2 group"
+                    className="text-sm text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group"
                   >
-                    <FaArrowRight size={12} className="text-royalBlue/50 group-hover:text-royalBlue transition" />
+                    <FaArrowRight size={10} className="text-slate-700 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
                     {service.title}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link to="/services" className="text-sm text-royalBlue hover:text-darkBlue transition flex items-center gap-2">
-                  View All →
+              <li className="pt-2">
+                <Link to="/services" className="text-sm font-medium text-blue-400 hover:text-cyan-300 transition-colors flex items-center gap-2 group">
+                  View All Services 
+                  <FaArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
-          {/* Contact & Newsletter */}
-          <div>
-            <h4 className="text-darkBlue font-bold text-lg mb-4">Get in Touch</h4>
-            <ul className="space-y-3 mb-5">
-              <li className="flex items-start gap-3 text-sm text-gray-600">
-                <FaMapMarkerAlt size={16} className="text-royalBlue mt-0.5 flex-shrink-0" />
-                <span>Plot No. 34, Road No. 5, New Venkataramana Colony, Vanasthalipuram, Hyderabad – 500070</span>
+          {/* 4. Contact & Newsletter */}
+          <motion.div variants={itemVariants}>
+            <h4 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+              Get in Touch
+            </h4>
+            <ul className="space-y-4 mb-8">
+              <li className="flex items-start gap-3 text-sm text-slate-400">
+                <div className="mt-0.5 p-1.5 rounded-md bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <FaMapMarkerAlt size={12} />
+                </div>
+                <span className="leading-relaxed">Plot No. 34, Road No. 5, New Venkataramana Colony, Vanasthalipuram, Hyderabad – 500070</span>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <FaPhone size={16} className="text-royalBlue flex-shrink-0" />
-                <a href="tel:+919948886996" className="hover:text-royalBlue transition">+91-9948886996</a>
+              <li className="flex items-center gap-3 text-sm text-slate-400">
+                <div className="p-1.5 rounded-md bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <FaPhone size={12} />
+                </div>
+                <a href="tel:+919948886996" className="hover:text-cyan-400 transition-colors">+91-9948886996</a>
               </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <FaEnvelope size={16} className="text-royalBlue flex-shrink-0" />
-                <a href="mailto:info@eversttechservices.com" className="hover:text-royalBlue transition">info@eversttechservices.com</a>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-gray-600">
-                <FaClock size={16} className="text-royalBlue flex-shrink-0" />
-                <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+              <li className="flex items-center gap-3 text-sm text-slate-400">
+                <div className="p-1.5 rounded-md bg-slate-900 border border-slate-800 text-cyan-400 shrink-0">
+                  <FaEnvelope size={12} />
+                </div>
+                <a href="mailto:info@eversttechservices.com" className="hover:text-cyan-400 transition-colors">info@eversttechservices.com</a>
               </li>
             </ul>
+
+            {/* Newsletter */}
             <div>
-              <h5 className="text-darkBlue font-semibold text-sm mb-2">Subscribe to Newsletter</h5>
-              <div className="flex">
+              <h5 className="text-white font-medium text-sm mb-3">Subscribe to Insights</h5>
+              <div className="flex group">
                 <input 
                   type="email" 
-                  placeholder="Your email" 
-                  className="flex-1 px-3.5 py-2.5 rounded-l-xl bg-white border border-gray-300 text-gray-700 placeholder:text-gray-400 text-sm focus:outline-none focus:border-royalBlue focus:ring-2 focus:ring-royalBlue/20"
+                  placeholder="Enter your work email" 
+                  className="flex-1 px-4 py-2.5 rounded-l-xl bg-slate-900 border border-slate-700 text-white placeholder:text-slate-500 text-sm focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
                 />
-                <button className="px-4 bg-gradient-to-r from-royalBlue to-cyan text-white rounded-r-xl hover:opacity-90 transition">
-                  <FaPaperPlane size={18} />
+                <button className="px-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-r-xl hover:opacity-90 transition-opacity flex items-center justify-center">
+                  <FaPaperPlane size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+
+        </motion.div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200 bg-white">
-        <div className="container mx-auto px-4 py-5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
+      <div className="border-t border-slate-800/80 bg-slate-950/50 backdrop-blur-md relative z-10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-slate-500">
             <span>© {currentYear} Everst Tech Services. All rights reserved.</span>
-            <div className="flex items-center gap-5">
-              <Link to="/privacy" className="hover:text-royalBlue transition">Privacy Policy</Link>
-              <Link to="/terms" className="hover:text-royalBlue transition">Terms & Conditions</Link>
-              <Link to="/cookies" className="hover:text-royalBlue transition">Cookies Policy</Link>
+            <div className="flex items-center gap-6">
+              <Link to="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</Link>
+              <Link to="/cookies" className="hover:text-cyan-400 transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>

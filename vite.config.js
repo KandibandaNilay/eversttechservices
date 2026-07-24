@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(), // Make sure this is included
+    tailwindcss(),
   ],
+  base: 'eversttechservices',  // ← replace REPO_NAME with your repo name
+  // For user site: base: '/',
 });

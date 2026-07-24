@@ -1,14 +1,17 @@
 {
   "name": "eversttechservices",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "homepage": "https://github.com/KandibandaNilay/eversttechservices.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "axios": "^1.18.1",
@@ -30,6 +33,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
     "eslint": "^10.7.0",
+    "gh-pages": "^6.3.0",
     "oxlint": "^1.71.0",
     "prettier": "^3.9.6",
     "vite": "^8.1.1"
