@@ -1,0 +1,50 @@
+export const technologiesData = {
+  frontend: [
+    { name: 'React', icon: '⚛️', description: 'UI library for building interactive interfaces' },
+    { name: 'Vue', icon: '🟢', description: 'Progressive JavaScript framework' },
+    { name: 'Angular', icon: '🅰️', description: 'Full-featured TypeScript framework' },
+    { name: 'Next.js', icon: '▲', description: 'React framework for production' },
+    { name: 'Tailwind CSS', icon: '🎨', description: 'Utility-first CSS framework' },
+    { name: 'TypeScript', icon: '📘', description: 'Typed JavaScript superset' },
+  ],
+  backend: [
+    { name: 'Node.js', icon: '🟢', description: 'JavaScript runtime for server-side' },
+    { name: 'Java', icon: '☕', description: 'Enterprise-grade programming language' },
+    { name: 'Python', icon: '🐍', description: 'Versatile programming language' },
+    { name: '.NET', icon: '🟣', description: 'Microsoft application framework' },
+    { name: 'PHP', icon: '🐘', description: 'Server-side scripting language' },
+    { name: 'Spring Boot', icon: '🌱', description: 'Java framework for microservices' },
+  ],
+  databases: [
+    { name: 'MongoDB', icon: '🍃', description: 'NoSQL document database' },
+    { name: 'MySQL', icon: '🐬', description: 'Relational database management' },
+    { name: 'PostgreSQL', icon: '🐘', description: 'Advanced open-source relational DB' },
+    { name: 'Redis', icon: '🔴', description: 'In-memory data structure store' },
+    { name: 'Elasticsearch', icon: '🔍', description: 'Search and analytics engine' },
+    { name: 'Firebase', icon: '🔥', description: 'Backend-as-a-Service' },
+  ],
+  cloud: [
+    { name: 'AWS', icon: '☁️', description: 'Amazon Web Services cloud platform' },
+    { name: 'Azure', icon: '🔷', description: 'Microsoft cloud platform' },
+    { name: 'Google Cloud', icon: '🟦', description: 'Google cloud platform' },
+    { name: 'Docker', icon: '🐳', description: 'Containerization platform' },
+    { name: 'Kubernetes', icon: '☸️', description: 'Container orchestration' },
+    { name: 'Terraform', icon: '🏗️', description: 'Infrastructure as code' },
+  ],
+  mobile: [
+    { name: 'Flutter', icon: '📱', description: 'Cross-platform UI framework' },
+    { name: 'React Native', icon: '⚛️', description: 'Cross-platform mobile development' },
+    { name: 'Swift', icon: '🦅', description: 'iOS app development' },
+    { name: 'Kotlin', icon: '💜', description: 'Android app development' },
+    { name: 'Android', icon: '🤖', description: 'Android platform' },
+    { name: 'iOS', icon: '🍎', description: 'iOS platform' },
+  ],
+  devops: [
+    { name: 'Docker', icon: '🐳', description: 'Containerization' },
+    { name: 'Kubernetes', icon: '☸️', description: 'Orchestration' },
+    { name: 'Jenkins', icon: '🔧', description: 'CI/CD automation' },
+    { name: 'GitHub Actions', icon: '⚡', description: 'CI/CD workflows' },
+    { name: 'Ansible', icon: '📦', description: 'Infrastructure automation' },
+    { name: 'Prometheus', icon: '📊', description: 'Monitoring and alerts' },
+  ]
+};
