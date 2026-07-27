@@ -60,10 +60,10 @@ const SectionDivider = () => (
 
 // --- MOCK DATA INLINED ---
 const jobsData = [
-  { id: '1', title: 'Senior Cloud Architect', department: 'Engineering', location: 'Remote', type: 'Full-time', experience: '8+ Years' },
-  { id: '2', title: 'DevSecOps Engineer', department: 'Security', location: 'Hybrid', type: 'Full-time', experience: '5+ Years' },
-  { id: '3', title: 'Full Stack React Node Developer', department: 'Engineering', location: 'Remote', type: 'Full-time', experience: '3-5 Years' },
-  { id: '4', title: 'AI / LLM Solutions Lead', department: 'Data Science', location: 'On-site', type: 'Full-time', experience: '6+ Years' }
+  { id: '1', title: 'Senior Cloud Architect', department: 'Engineering', location: 'Remote', type: 'Full-time', experience: '3+ Years' },
+  { id: '2', title: 'DevSecOps Engineer', department: 'Security', location: 'Hybrid', type: 'Full-time', experience: '1-3  Years' },
+  { id: '3', title: 'Full Stack React Node Developer', department: 'Engineering', location: 'Remote', type: 'Full-time', experience: '1-3 Years' },
+  { id: '4', title: 'AI / LLM Solutions Lead', department: 'Data Science', location: 'On-site', type: 'Full-time', experience: '1-3 Years' }
 ];
 
 // --- MAIN CAREERS COMPONENT ---
@@ -202,7 +202,7 @@ export default function Careers() {
                       <span className="text-amber-400/80 font-medium">{job.experience}</span>
                     </div>
                   </div>
-                  <Button href={`#`} variant="outline" className="shrink-0 group-hover:border-amber-500/50 group-hover:text-amber-400">
+                  <Button href={`/eversttechservices/contact`} variant="outline" className="shrink-0 group-hover:border-amber-500/50 group-hover:text-amber-400">
                     Apply Now <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
@@ -240,72 +240,6 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* --- APPLY FORM --- */}
-      <section className="py-24">
-        <div className="container mx-auto px-6">
-          <div className="text-center flex flex-col items-center mb-12">
-            <SectionTitle title="Submit Your Profile" subtitle="Upload your resume securely. Our talent acquisition team reviews every submission." badge="Direct Application" />
-          </div>
-          
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-2xl mx-auto">
-            <div className="p-8 md:p-10 rounded-2xl bg-[#0D1117] border border-slate-800 shadow-xl shadow-black/50">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Full Name <span className="text-amber-500">*</span></label>
-                    <input type="text" required className="w-full px-4 py-3 rounded-xl bg-[#0A0E14] border border-slate-800 text-white placeholder:text-slate-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all" placeholder="Enter your full name" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Email Address <span className="text-amber-500">*</span></label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-xl bg-[#0A0E14] border border-slate-800 text-white placeholder:text-slate-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all" placeholder="engineering@domain.com" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Phone Number <span className="text-amber-500">*</span></label>
-                    <input type="tel" required className="w-full px-4 py-3 rounded-xl bg-[#0A0E14] border border-slate-800 text-white placeholder:text-slate-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all" placeholder="+1 (555) 000-0000" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">Target Role <span className="text-amber-500">*</span></label>
-                    <select required className="w-full px-4 py-3 rounded-xl bg-[#0A0E14] border border-slate-800 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all appearance-none cursor-pointer">
-                      <option value="" className="text-slate-500">Select a position...</option>
-                      {jobsData.map(job => (
-                        <option key={job.id} value={job.title}>{job.title}</option>
-                      ))}
-                      <option value="general">General Spontaneous Application</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Technical Profile / Resume <span className="text-amber-500">*</span></label>
-                  <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-slate-700 bg-[#0A0E14]/50 rounded-xl hover:border-amber-500/50 hover:bg-amber-500/5 transition-colors cursor-pointer group">
-                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                      <FileText className="w-8 h-8 text-slate-500 mb-3 group-hover:text-amber-400 transition-colors" />
-                      <p className="mb-2 text-sm text-slate-400"><span className="font-semibold text-white">Click to upload</span> or drag and drop</p>
-                      <p className="text-xs text-slate-500">PDF, DOCX (Max 5MB)</p>
-                    </div>
-                    <input type="file" className="hidden" accept=".pdf,.doc,.docx" required />
-                  </label>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-300 mb-2">Cover Letter / Portfolio URL (Optional)</label>
-                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-[#0A0E14] border border-slate-800 text-white placeholder:text-slate-600 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all resize-none" placeholder="Link to your GitHub, Portfolio, or briefly describe your impact..." />
-                </div>
-
-                <div className="pt-2">
-                  <Button type="submit" variant="primary" className="w-full text-lg py-4">
-                    Securely Submit Application <Send className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
-              </form>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* --- CTA SECTION --- */}
       <section className="py-24 relative overflow-hidden border-t border-slate-800/80">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-teal-500/5" />
@@ -314,7 +248,7 @@ export default function Careers() {
           <p className="text-xl text-slate-300 mb-10 font-light max-w-2xl mx-auto">
             We are constantly seeking elite architects and engineers. Submit your profile, and we'll route it to the appropriate team lead.
           </p>
-          <Button variant="outline" className="text-lg px-8 py-4 bg-[#0A0E14]" href="/contact">
+          <Button variant="outline" className="text-lg px-8 py-4 bg-[#0A0E14]" href="/eversttechservices/contact">
             Reach Out Directly
           </Button>
         </div>

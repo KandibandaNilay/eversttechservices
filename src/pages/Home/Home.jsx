@@ -8,7 +8,7 @@ import {
 
 // --- INLINED DATA TO MAKE COMPONENT STANDALONE ---
 const servicesData = [
-  { id: 1, title: 'Custom Software Engineering', shortDesc: 'End-to-end full-stack development tailored to your exact business workflow.' },
+  { id: 1, title: 'Power Bi Services', shortDesc: 'End-to-end full-stack development tailored to your exact business workflow.' },
   { id: 2, title: 'Cloud Architecture & Migration', shortDesc: 'Scalable AWS, Azure, and GCP infrastructure deployment and modernization.' },
   { id: 3, title: 'Cybersecurity & Compliance', shortDesc: 'Enterprise-grade threat protection, SOC2 compliance, and vulnerability auditing.' },
   { id: 4, title: 'DevOps & CI/CD Automation', shortDesc: 'Streamlined deployment pipelines ensuring 99.99% uptime and zero-downtime releases.' },
@@ -42,12 +42,22 @@ const SectionTitle = ({ title, subtitle, badge }) => (
   </div>
 );
 
-const Button = ({ children, variant = 'primary', className = '', href = '#' }) => {
-  const base = "inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out";
+const Button = ({
+  children,
+  variant = "primary",
+  className = "",
+  href = "/eversttechservices/contact",
+}) => {
+  const base =
+    "inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out";
+
   const variants = {
-    primary: "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 shadow-lg shadow-amber-500/20",
-    outline: "border border-slate-700 text-slate-200 hover:bg-slate-800/80 hover:border-slate-600"
+    primary:
+      "bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 shadow-lg shadow-amber-500/20",
+    outline:
+      "border border-slate-700 text-slate-200 hover:bg-slate-800/80 hover:border-slate-600",
   };
+
   return (
     <a href={href} className={`${base} ${variants[variant]} ${className}`}>
       {children}
@@ -139,17 +149,25 @@ export default function Home() {
 
 {/* CTA Buttons */}
 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-  <Button variant="primary">
+  <Button
+    variant="primary"
+    href="/eversttechservices/services"
+  >
     Explore Our Services
     <ArrowRight size={18} className="ml-2" />
   </Button>
 
-  <Button variant="outline">
+  <Button
+    variant="outline"
+    href="/eversttechservices/contact"
+  >
     Schedule a Consultation
   </Button>
 </div>
+
+
   {/* Statistics */}
-  <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-800/70 pt-8">
+  <div className="mt-14 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-800/70 pt-8">
 
     <div>
       <h3 className="text-3xl font-bold text-amber-400">100+</h3>
@@ -182,7 +200,7 @@ export default function Home() {
   </div>
 
   {/* Features */}
-  <div className="mt-10 flex flex-wrap gap-4">
+  <div className="mt-10 flex flex-wrap justify-center gap-4">
 
     <div className="flex items-center gap-2 bg-[#111827] border border-slate-700 rounded-full px-4 py-2">
       <CheckCircle2 size={18} className="text-amber-400" />
@@ -238,7 +256,7 @@ export default function Home() {
           <div className="mt-16 divide-y divide-slate-800/80 border-y border-slate-800/80">
             {servicesData.map((service, index) => (
               <motion.a 
-                key={service.id} href="#"
+                key={service.id} href="/eversttechservices/services"
                 initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }}
                 className="group grid grid-cols-1 md:grid-cols-12 items-center gap-6 py-8 px-4 hover:bg-amber-500/[0.02] transition-colors"
               >

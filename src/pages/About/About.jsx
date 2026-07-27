@@ -129,10 +129,10 @@ export default function About() {
                 With over a decade of dedicated operational experience, our team of 50+ senior architects and engineers combines deep technical mastery with a profound understanding of modern business workflows. We don't just write code; we build resilient, secure, and highly scalable enterprise ecosystems.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Button variant="primary" href="/services">
+                <Button variant="primary" href="/eversttechservices/services">
                   Explore Capabilities <ArrowRight size={18} className="ml-2" />
                 </Button>
-                <Button variant="outline" href="/contact">Get in Touch</Button>
+                <Button variant="outline" href="/eversttechservices/contact">Get in Touch</Button>
               </div>
             </motion.div>
             
@@ -300,7 +300,7 @@ export default function About() {
           <p className="text-xl text-slate-300 mb-10 font-light max-w-2xl mx-auto">
             Partner with our architecture team to construct digital infrastructure that outpaces your competition.
           </p>
-          <Button variant="primary" className="text-lg px-8 py-4" href="/contact">
+          <Button variant="primary" className="text-lg px-8 py-4" href="/eversttechservices/contact">
             Start A Project <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>

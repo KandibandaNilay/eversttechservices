@@ -21,7 +21,7 @@ const Footer = () => {
     <footer className="bg-[#06090D] border-t border-slate-800 pt-20 pb-10">
       <div className="container mx-auto px-6">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-20">
           
           {/* Brand Column */}
           <div className="space-y-6">
@@ -38,14 +38,14 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold mb-6">Quick Links</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-5 text-base text-slate-400">
               {['Home', 'About', 'Services', 'Careers', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                    className="text-slate-400 hover:text-amber-500 transition-colors flex items-center gap-2"
+                    className="flex items-center gap-3 text-base text-slate-400 hover:text-amber-500 transition-colors"
                   >
-                    <ChevronRight size={12} /> {item}
+                    <ChevronRight size={16} /> {item}
                   </Link>
                 </li>
               ))}
@@ -55,7 +55,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-bold mb-6">Contact Us</h4>
-            <ul className="space-y-4 text-slate-400">
+            <ul className="space-y-3 text-slate-400">
               <li className="flex items-start gap-3">
                 <Phone size={18} className="text-amber-500 shrink-0" />
                 <span>+91-9948886996</span>
@@ -93,7 +93,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-600">
-          <p>© 2026 EverstTech Services. All rights reserved.</p>
+          <p>© 2020 EverstTech Services. All rights reserved.</p>
           <div className="flex gap-8">
             <Link to="/privacy" className="hover:text-slate-400">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-slate-400">Terms of Service</Link>

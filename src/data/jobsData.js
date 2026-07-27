@@ -5,7 +5,7 @@ export const jobsData = [
     department: 'Engineering',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '5+ years',
+    experience: '1+ years',
     description: 'We are looking for a Senior React Developer to build and maintain high-performance web applications.',
     responsibilities: [
       'Lead development of React-based applications',
@@ -15,7 +15,7 @@ export const jobsData = [
       'Ensure code quality and performance'
     ],
     requirements: [
-      '5+ years of React experience',
+      '1+ years of React experience',
       'Experience with Next.js and TypeScript',
       'Strong understanding of modern JavaScript',
       'Experience with state management (Redux, Zustand)',
@@ -28,7 +28,7 @@ export const jobsData = [
     department: 'Engineering',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '3+ years',
+    experience: '1-3 years',
     description: 'We are seeking a Full Stack Developer to work on end-to-end application development.',
     responsibilities: [
       'Develop frontend and backend components',
@@ -38,7 +38,7 @@ export const jobsData = [
       'Write clean, maintainable code'
     ],
     requirements: [
-      '3+ years of full stack development',
+      '1-3 years of full stack development',
       'Experience with React and Node.js',
       'Knowledge of MongoDB or PostgreSQL',
       'Understanding of DevOps practices',
@@ -51,7 +51,7 @@ export const jobsData = [
     department: 'Design',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '3+ years',
+    experience: '1-3 years',
     description: 'We are looking for a creative UI/UX Designer to create beautiful and intuitive user experiences.',
     responsibilities: [
       'Design user interfaces for web and mobile',
@@ -61,7 +61,7 @@ export const jobsData = [
       'Maintain design systems'
     ],
     requirements: [
-      '3+ years of UI/UX design experience',
+      '1-3 years of UI/UX design experience',
       'Proficiency in Figma or Adobe XD',
       'Strong portfolio of design work',
       'Understanding of design principles',
@@ -74,7 +74,7 @@ export const jobsData = [
     department: 'Engineering',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '4+ years',
+    experience: '1-3 years',
     description: 'We are seeking a DevOps Engineer to manage and optimize our cloud infrastructure.',
     responsibilities: [
       'Design and maintain CI/CD pipelines',
@@ -84,7 +84,7 @@ export const jobsData = [
       'Automate operational processes'
     ],
     requirements: [
-      '4+ years of DevOps experience',
+      '1-3 years of DevOps experience',
       'Experience with AWS or Azure',
       'Knowledge of Docker and Kubernetes',
       'Experience with CI/CD tools',
@@ -97,7 +97,7 @@ export const jobsData = [
     department: 'AI & ML',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '3+ years',
+    experience: '1-3 years',
     description: 'We are looking for a Machine Learning Engineer to build and deploy ML models.',
     responsibilities: [
       'Develop and train ML models',
@@ -107,7 +107,7 @@ export const jobsData = [
       'Collaborate with data scientists'
     ],
     requirements: [
-      '3+ years of ML engineering experience',
+      '1-3 years of ML engineering experience',
       'Experience with Python and ML frameworks',
       'Knowledge of cloud ML services',
       'Understanding of data science concepts',
@@ -120,7 +120,7 @@ export const jobsData = [
     department: 'Engineering',
     type: 'Full Time',
     location: 'Hyderabad, India',
-    experience: '2+ years',
+    experience: '1-3 years',
     description: 'We are seeking a React Native Developer to build cross-platform mobile applications.',
     responsibilities: [
       'Develop React Native mobile apps',
@@ -130,7 +130,7 @@ export const jobsData = [
       'Participate in code reviews'
     ],
     requirements: [
-      '2+ years of React Native experience',
+      '1-3 years of React Native experience',
       'Experience with mobile app development',
       'Understanding of mobile UI/UX',
       'Knowledge of state management',

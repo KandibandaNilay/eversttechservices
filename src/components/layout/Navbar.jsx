@@ -46,7 +46,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="EverstTech Logo"
-            className="h-12 w-auto"
+            className="h-10 w-auto"
           />
 
           <span className="text-2xl font-black text-white tracking-tighter">
@@ -119,7 +119,8 @@ const Navbar = () => {
           </nav>
 
           {/* CTA Button */}
-          <Link to="/contact" className="hidden lg:flex items-center gap-2 bg-amber-500 text-slate-950 px-8 py-4 rounded-xl font-black text-lg hover:bg-amber-400 transition-all hover:scale-105">
+          <Link to="/contact" className="hidden lg:flex items-center gap-3 bg-amber-500 text-slate-950 px-6 py-3 rounded-md font-bold text-md hover:bg-amber-400 transition-all hover:scale-95
+          ">
             Get a Consultation
           </Link>
 

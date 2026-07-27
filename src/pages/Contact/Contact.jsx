@@ -4,6 +4,7 @@ import {
   MapPin, Phone, Mail, Clock, Send, CheckCircle2, 
   ArrowRight, MessageSquareCode, ChevronRight, Zap, Globe 
 } from 'lucide-react';
+import { AlertTriangle } from "lucide-react";
 
 // --- INLINED REUSABLE UI COMPONENTS ---
 const SectionTitle = ({ title, subtitle, badge }) => (
@@ -74,7 +75,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: <MapPin className="w-5 h-5" />, label: 'Headquarters', value: 'Plot No. 34, Road No. 5, New Venkataramana Colony,\nVanasthalipuram, Hyderabad – 500070', accent: 'amber' },
+    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Vanasthalipuram, \n Hyderabad – 500070', accent: 'amber' },
     { icon: <Phone className="w-5 h-5" />, label: 'Direct Line', value: '+91-9948886996\n040-35570047', accent: 'teal' },
     { icon: <Mail className="w-5 h-5" />, label: 'Email Support', value: 'info@eversttechservices.com\ninfo.eversttechservices@gmail.com', accent: 'orange' },
     { icon: <Clock className="w-5 h-5" />, label: 'Business Hours', value: 'Mon - Sat: 9:00 AM - 7:00 PM\nSunday: Closed', accent: 'amber' },
@@ -128,14 +129,14 @@ export default function Contact() {
                   Support & Architecture
                 </div>
                 
-                <h2 className="text-3xl font-extrabold text-white mb-4">
+                <h2 className="text-4xl font-extrabold text-white mb-4">
                   Let's build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-amber-400">future.</span>
                 </h2>
                 <p className="text-slate-400 font-light leading-relaxed mb-12">
                   Whether you need comprehensive digital transformation or tactical infrastructure upgrades, our enterprise experts are ready to assist.
                 </p>
 
-                <div className="space-y-8">
+                <div className="space-y-9">
                   {contactInfo.map((item, index) => (
                     <motion.div 
                       key={index} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
@@ -174,7 +175,7 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}
                   >
                     <div className="mb-10">
-                      <h3 className="text-2xl font-bold text-white">Project Inquiry</h3>
+                      <h3 className="text-xl font-bold text-white">Project Inquiry</h3>
                       <p className="text-slate-400 font-light text-sm mt-2">All fields marked with an asterisk (*) are required.</p>
                     </div>
 
@@ -228,7 +229,7 @@ export default function Contact() {
                         />
                       </div>
 
-                      <div className="pt-4">
+                      <div className="pt-6">
                         <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto px-10 py-4">
                           {isSubmitting ? (
                             <>
@@ -240,7 +241,7 @@ export default function Contact() {
                             </>
                           ) : (
                             <>
-                              Initialize Communication <Send className="w-4 h-4 ml-2" />
+                              Submit Inquiry <Send className="w-4 h-4 ml-2" />
                             </>
                           )}
                         </Button>
@@ -254,17 +255,18 @@ export default function Contact() {
                     initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
                     className="h-full flex flex-col items-center justify-center text-center py-20"
                   >
-                    <div className="w-24 h-24 bg-teal-500/10 border border-teal-500/20 rounded-full flex items-center justify-center mb-6 relative">
-                      <div className="absolute inset-0 bg-teal-500/20 rounded-full animate-ping opacity-50" />
-                      <CheckCircle2 className="w-12 h-12 text-teal-400 relative z-10" />
-                    </div>
-                    <h3 className="text-3xl font-extrabold text-white mb-3">Transmission Received</h3>
-                    <p className="text-slate-400 max-w-sm mb-8 leading-relaxed font-light">
-                      Thank you for reaching out. A solution architect from Everst Tech will review your inquiry and contact you shortly.
-                    </p>
-                    <Button variant="ghost" onClick={() => setIsSuccess(false)}>
-                      Send Another Message <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+
+                  <div className="w-24 h-24 bg-red-500/10 border border-red-500/20 rounded-full flex items-center justify-center mb-6 relative">
+                    <div className="absolute inset-0 bg-red-500/20 rounded-full animate-ping opacity-50" />
+                    <AlertTriangle className="w-12 h-12 text-red-400 relative z-10" />
+                  </div>
+                  <h3 className="text-3xl font-extrabold text-white mb-3">
+                        Server Problem
+                      </h3>
+
+                      <p className="text-slate-400 max-w-sm mb-8 leading-relaxed font-light">
+                        We're experiencing a temporary server issue, so your message couldn't be sent. Please try again later or contact us directly at <a href="info@eversttechservices.com" className="text-amber-400 hover:underline">info@eversttechservices.com</a>.
+                      </p>
                   </motion.div>
                 )}
               </AnimatePresence>
