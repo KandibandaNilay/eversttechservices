@@ -274,32 +274,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* --- MAP SECTION --- */}
-      <section className="relative z-10 pb-24">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex items-center gap-3 mb-6 px-2">
-            <Globe className="w-5 h-5 text-amber-500" />
-            <h3 className="text-xl font-bold text-white">Global Headquarters</h3>
-          </div>
-          <div className="rounded-3xl overflow-hidden border border-slate-800 bg-[#0D1117] p-2 h-[450px] shadow-2xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.978!2d78.5800!3d17.3200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcba1e6c5b8b9d9%3A0x4b5c6d7e8f9a0b1c!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1644250000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ 
-                border: 0, 
-                borderRadius: '1.25rem',
-                // This CSS filter magically turns the default light Google Map into a beautiful Dark Mode map!
-                filter: 'invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%)'
-              }}
-              allowFullScreen=""
-              loading="lazy"
-              title="Everst Tech Services Location"
-              className="transition-all duration-700 hover:brightness-100"
-            />
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

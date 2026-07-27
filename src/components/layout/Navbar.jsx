@@ -7,6 +7,7 @@ import {
   FaChevronDown, FaArrowRight 
 } from 'react-icons/fa';
 import { servicesData } from '../../data/servicesData';
+import logo from '../../assets/images/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,19 +33,26 @@ const Navbar = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled 
-          ? 'bg-[#0A0E14]/95 backdrop-blur-xl border-slate-800 py-3' 
-          : 'bg-[#0A0E14] border-slate-800 py-6'
+          ? 'bg-[#0A0E14]/95 backdrop-blur-xl border-slate-500 py-2' 
+          : 'bg-[#0A0E14] border-slate-800 py-1'
       }`}
     >
       <div className="container mx-auto px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <span className="text-3xl font-black text-white tracking-tighter">
-              EVERST<span className="text-amber-500">TECH</span>
-            </span>
-          </Link>
+
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="EverstTech Logo"
+            className="h-12 w-auto"
+          />
+
+          <span className="text-2xl font-black text-white tracking-tighter">
+            EVERST<span className="text-amber-500">TECH</span>
+          </span>
+        </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
@@ -53,8 +61,8 @@ const Navbar = () => {
                 {link.hasDropdown ? (
                   <div onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
                    <button className="text-lg font-bold text-black hover:text-amber-500 transition-colors flex items-center gap-2">
-  Services <FaChevronDown size={12} />
-</button>
+                    Services <FaChevronDown size={12} />
+                  </button>
                     
                     {/* Mega Menu Dropdown */}
                     <AnimatePresence>
@@ -80,7 +88,7 @@ const Navbar = () => {
                                 <Link 
                                   key={service.id} 
                                   to={`/services/${service.slug}`} 
-                                  className="group flex flex-col gap-3 p-4 rounded-2xl hover:bg-[#161b22] transition-all border border-transparent hover:border-slate-700"
+                                  className="group flex flex-col gap-2 p-4 rounded-2xl hover:bg-[#161b22] transition-all border border-transparent hover:border-slate-700"
                                 >
                                   <div className="text-3xl">{service.icon}</div>
                                   <div>

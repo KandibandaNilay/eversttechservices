@@ -1,12 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Server, ShoppingCart, Layout, Database, 
-  GitMerge, Monitor, ArrowRight, ChevronRight, 
-  CheckCircle2, Code2, Zap, Workflow,
-  Cpu, Box, Code
-} from 'lucide-react';
+import ServiceLayout from '../../components/layout/ServiceLayout';
+import { getServiceBySlug } from '../../data/servicesData';
 
+export default function MobileAppDevelopment() {
+  const service = getServiceBySlug('mobile-app-development');
+  return <ServiceLayout {...service} />;
+}
 // --- INLINED REUSABLE UI COMPONENTS ---
 const SectionTitle = ({ title, subtitle, badge }) => (
   <div className="max-w-3xl">

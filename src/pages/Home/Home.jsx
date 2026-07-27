@@ -108,84 +108,112 @@ export default function Home() {
   return (
     <div className="bg-[#0A0E14] text-slate-100 overflow-x-hidden selection:bg-amber-500/30 selection:text-amber-50 font-sans">
       
-      {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[95vh] flex items-center pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_15%_0%,rgba(245,166,35,0.12),transparent)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_100%_100%,rgba(45,212,191,0.08),transparent)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
+{/* Hero Content */}
+<motion.div
+  initial={{ opacity: 0, x: -30 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="lg:col-span-7"
+>
+  {/* Badge */}
+ <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-[0.2em] mt-24 mb-6 backdrop-blur-md">
+    <Zap className="w-4 h-4" />
+    <span>Trusted Technology Partner</span>
+  </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            {/* Hero Content */}
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
-            >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-md font-mono">
-                <Zap className="w-3.5 h-3.5 animate-pulse" />
-                <span>Next-Gen Enterprise IT Solutions</span>
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1] text-white">
-                Architecting <span className="bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-clip-text text-transparent">Digital Future</span> For Scaling Enterprises
-              </h1>
-              
-              <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-light">
-                We design, build, and scale high-performance custom software, cloud platforms, and cybersecurity frameworks tailored to market leaders.
-              </p>
-              
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Button variant="primary">
-                  Explore Solutions <ArrowRight size={18} className="ml-2" />
-                </Button>
-                <Button variant="outline">Book Architecture Call</Button>
-              </div>
+  {/* Heading */}
+  <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-white text-center mx-auto max-w-4xl">
+    Empowering Businesses Through
+    <span className="block bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-clip-text text-transparent mt-2">
+      Innovative Digital Solutions
+    </span>
+  </h1>
 
-              <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap gap-6 text-slate-400 text-sm">
-                <div className="flex items-center gap-2"><CheckCircle2 size={18} className="text-amber-400" /> Trusted by 500+ global brands</div>
-                <div className="flex items-center gap-2"><CheckCircle2 size={18} className="text-amber-400" /> 99.9% Delivery Precision</div>
-              </div>
-            </motion.div>
+  {/* Description */}
+<p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl font-light text-center mx-auto">
+    EverstTech Services delivers enterprise-grade software development,
+    cloud solutions, AI-driven automation, cybersecurity, and IT consulting
+    services that help organisations innovate, scale efficiently, and stay
+    ahead in a rapidly evolving digital world.
+  </p>
 
-            {/* Hero Terminal Animation */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-teal-400 rounded-2xl blur-2xl opacity-20 animate-pulse" />
-              <div className="relative rounded-2xl bg-[#0D1117]/90 backdrop-blur-xl border border-slate-700/50 shadow-2xl overflow-hidden">
-                <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-800 bg-[#10151C]">
-                  <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-3 flex items-center gap-1.5 text-xs font-mono text-slate-500">
-                    <Terminal className="w-3.5 h-3.5" /> deploy@everst:~
-                  </span>
-                </div>
-                <div className="p-6 font-mono text-sm leading-relaxed space-y-2">
-                  <p className="text-slate-400"><span className="text-amber-400">$</span> everst status --system core</p>
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="space-y-1">
-                    <p className="text-slate-300"><span className="text-teal-400">✓</span> cloud-infra <span className="text-slate-500 ml-4">AWS / Azure Hybrid</span></p>
-                    <p className="text-slate-300"><span className="text-teal-400">✓</span> security    <span className="text-slate-500 ml-4">ISO 27001 · SOC2</span></p>
-                    <p className="text-slate-300"><span className="text-teal-400">✓</span> pipeline    <span className="text-slate-500 ml-4">CI/CD automated</span></p>
-                  </motion.div>
-                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }} className="pt-3">
-                    <p className="text-slate-300"><span className="text-amber-400">→</span> uptime      <span className="text-white font-semibold ml-6">99.98%</span></p>
-                    <div className="mt-3 h-1.5 w-full rounded-full bg-slate-800 overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }} animate={{ width: '99.8%' }} transition={{ duration: 1.5, delay: 1.8, ease: 'easeOut' }}
-                        className="h-full rounded-full bg-gradient-to-r from-amber-500 to-teal-400"
-                      />
-                    </div>
-                    <p className="mt-2 text-xs text-slate-500">performance score · 99.8 / 100</p>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+{/* CTA Buttons */}
+<div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+  <Button variant="primary">
+    Explore Our Services
+    <ArrowRight size={18} className="ml-2" />
+  </Button>
+
+  <Button variant="outline">
+    Schedule a Consultation
+  </Button>
+</div>
+  {/* Statistics */}
+  <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-800/70 pt-8">
+
+    <div>
+      <h3 className="text-3xl font-bold text-amber-400">100+</h3>
+      <p className="text-slate-400 text-sm mt-2">
+        Projects Delivered
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-3xl font-bold text-amber-400">50+</h3>
+      <p className="text-slate-400 text-sm mt-2">
+        Happy Clients
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-3xl font-bold text-amber-400">10+</h3>
+      <p className="text-slate-400 text-sm mt-2">
+        Technology Expertise
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-3xl font-bold text-amber-400">24×7</h3>
+      <p className="text-slate-400 text-sm mt-2">
+        Technical Support
+      </p>
+    </div>
+
+  </div>
+
+  {/* Features */}
+  <div className="mt-10 flex flex-wrap gap-4">
+
+    <div className="flex items-center gap-2 bg-[#111827] border border-slate-700 rounded-full px-4 py-2">
+      <CheckCircle2 size={18} className="text-amber-400" />
+      <span className="text-slate-300 text-sm">
+        Custom Software Development
+      </span>
+    </div>
+
+    <div className="flex items-center gap-2 bg-[#111827] border border-slate-700 rounded-full px-4 py-2">
+      <CheckCircle2 size={18} className="text-amber-400" />
+      <span className="text-slate-300 text-sm">
+        Cloud & DevOps Solutions
+      </span>
+    </div>
+
+    <div className="flex items-center gap-2 bg-[#111827] border border-slate-700 rounded-full px-4 py-2">
+      <CheckCircle2 size={18} className="text-amber-400" />
+      <span className="text-slate-300 text-sm">
+        AI & Automation
+      </span>
+    </div>
+
+    <div className="flex items-center gap-2 bg-[#111827] border border-slate-700 rounded-full px-4 py-2">
+      <CheckCircle2 size={18} className="text-amber-400" />
+      <span className="text-slate-300 text-sm">
+        Cybersecurity Services
+      </span>
+    </div>
+
+  </div>
+</motion.div>
 
       {/* --- STATS BAR --- */}
       <section className="py-12 bg-[#10151C]/80 border-y border-slate-800/80 backdrop-blur-md">
@@ -308,7 +336,7 @@ export default function Home() {
                   onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                 >
-                  <span className="text-lg font-semibold text-slate-200">{faq.question}</span>
+                  <span className="text-lg font-semibold text-black">{faq.question}</span>
                   {activeFaq === idx ? <Minus className="text-amber-400 shrink-0" /> : <Plus className="text-slate-500 shrink-0" />}
                 </button>
                 <AnimatePresence>
