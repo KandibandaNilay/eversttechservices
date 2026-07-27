@@ -3,8 +3,9 @@ export const servicesData = [
     id: 1,
     title: 'Software Development',
     slug: 'software-development',
-    icon: '💻',
     shortDesc: 'Custom software solutions tailored to your business needs.',
+    icon: '💻',
+    accent: 'amber',
     description: 'We build robust, scalable, and secure software solutions that drive business growth. Our expert developers use cutting-edge technologies to deliver high-quality applications that solve complex business challenges.',
     benefits: [
       'Custom solutions tailored to your business',
@@ -27,8 +28,9 @@ export const servicesData = [
     id: 2,
     title: 'Web Development',
     slug: 'web-development',
-    icon: '🌐',
     shortDesc: 'High-performance web applications and websites.',
+    icon: '🌐',
+    accent: 'teal',
     description: 'We create stunning, responsive, and high-performance web applications that engage users and drive conversions. From simple landing pages to complex enterprise platforms, we deliver excellence.',
     benefits: [
       'Responsive design for all devices',
@@ -50,9 +52,10 @@ export const servicesData = [
   {
     id: 3,
     title: 'Mobile App Development',
-    slug: 'mobile-development',
-    icon: '📱',
+    slug: 'mobile-app-development',
     shortDesc: 'Native and cross-platform mobile applications.',
+    icon: '📱',
+    accent: 'orange',
     description: 'We develop innovative mobile applications that deliver exceptional user experiences. Whether native or cross-platform, our apps are built for performance, scalability, and user engagement.',
     benefits: [
       'Native and cross-platform solutions',
@@ -75,8 +78,9 @@ export const servicesData = [
     id: 4,
     title: 'UI/UX Design',
     slug: 'ui-ux-design',
-    icon: '🎨',
     shortDesc: 'Beautiful, intuitive, and user-centered design solutions.',
+    icon: '🎨',
+    accent: 'amber',
     description: 'Our design team creates beautiful, intuitive, and user-centered designs that enhance user satisfaction and drive business results. We combine creativity with usability to deliver exceptional experiences.',
     benefits: [
       'User-centered design approach',
@@ -99,8 +103,9 @@ export const servicesData = [
     id: 5,
     title: 'Cloud Solutions',
     slug: 'cloud-solutions',
-    icon: '☁️',
     shortDesc: 'Scalable cloud infrastructure and migration services.',
+    icon: '☁️',
+    accent: 'teal',
     description: 'We help businesses leverage the power of cloud computing to achieve scalability, flexibility, and cost-efficiency. Our cloud solutions are designed for performance, security, and reliability.',
     benefits: [
       'Scalable infrastructure',
@@ -123,8 +128,9 @@ export const servicesData = [
     id: 6,
     title: 'DevOps',
     slug: 'devops',
-    icon: '⚙️',
     shortDesc: 'Streamlined development and operations with DevOps.',
+    icon: '⚙️',
+    accent: 'orange',
     description: 'We implement DevOps practices to streamline development, deployment, and operations. Our approach accelerates delivery, improves quality, and enhances collaboration across teams.',
     benefits: [
       'Faster time-to-market',
@@ -147,8 +153,9 @@ export const servicesData = [
     id: 7,
     title: 'Digital Marketing',
     slug: 'digital-marketing',
-    icon: '📊',
     shortDesc: 'Data-driven digital marketing strategies for growth.',
+    icon: '📊',
+    accent: 'amber',
     description: 'We create data-driven digital marketing strategies that drive traffic, generate leads, and boost conversions. Our holistic approach covers all aspects of digital marketing to maximize ROI.',
     benefits: [
       'Increased brand visibility',
@@ -171,8 +178,9 @@ export const servicesData = [
     id: 8,
     title: 'SEO',
     slug: 'seo',
-    icon: '🔍',
     shortDesc: 'Search engine optimization for better visibility.',
+    icon: '🔍',
+    accent: 'teal',
     description: 'We implement comprehensive SEO strategies to improve your website\'s visibility, drive organic traffic, and increase conversions. Our approach is data-driven and results-oriented.',
     benefits: [
       'Higher search engine rankings',
@@ -195,8 +203,9 @@ export const servicesData = [
     id: 9,
     title: 'Cyber Security',
     slug: 'cyber-security',
-    icon: '🔒',
     shortDesc: 'Protect your business with robust cyber security solutions.',
+    icon: '🔒',
+    accent: 'orange',
     description: 'We provide comprehensive cyber security solutions to protect your business from evolving threats. Our security experts implement robust measures to safeguard your data, systems, and reputation.',
     benefits: [
       'Protection against cyber threats',
@@ -218,9 +227,10 @@ export const servicesData = [
   {
     id: 10,
     title: 'AI Solutions',
-    slug: 'ai',
-    icon: '🤖',
+    slug: 'ai-solutions',
     shortDesc: 'Artificial intelligence solutions for smarter business.',
+    icon: '🤖',
+    accent: 'amber',
     description: 'We develop AI-powered solutions that automate processes, generate insights, and drive innovation. From machine learning to natural language processing, we help you leverage AI for competitive advantage.',
     benefits: [
       'Process automation',
@@ -243,8 +253,9 @@ export const servicesData = [
     id: 11,
     title: 'Machine Learning',
     slug: 'machine-learning',
-    icon: '🧠',
     shortDesc: 'Machine learning solutions for data-driven innovation.',
+    icon: '🧠',
+    accent: 'teal',
     description: 'We leverage machine learning to extract insights, predict outcomes, and automate processes. Our ML solutions are tailored to your specific business challenges and data landscape.',
     benefits: [
       'Predictive insights',
@@ -267,8 +278,9 @@ export const servicesData = [
     id: 12,
     title: 'Data Analytics',
     slug: 'data-analytics',
-    icon: '📈',
     shortDesc: 'Transform your data into actionable business insights.',
+    icon: '📈',
+    accent: 'orange',
     description: 'We help you harness the power of your data with advanced analytics solutions. From dashboards to predictive models, we turn raw data into actionable insights that drive business growth.',
     benefits: [
       'Data-driven decisions',
@@ -291,8 +303,9 @@ export const servicesData = [
     id: 13,
     title: 'ERP Solutions',
     slug: 'erp-solutions',
-    icon: '🏢',
     shortDesc: 'Integrated enterprise resource planning solutions.',
+    icon: '🏢',
+    accent: 'amber',
     description: 'We implement and customize ERP solutions that integrate your business processes, improve efficiency, and provide real-time visibility across your organization.',
     benefits: [
       'Integrated business processes',
@@ -315,8 +328,9 @@ export const servicesData = [
     id: 14,
     title: 'CRM Solutions',
     slug: 'crm-solutions',
-    icon: '🤝',
     shortDesc: 'Customer relationship management for business growth.',
+    icon: '🤝',
+    accent: 'teal',
     description: 'We implement CRM solutions that help you manage customer relationships, streamline sales processes, and drive business growth. Our solutions are tailored to your unique business needs.',
     benefits: [
       'Improved customer relationships',
@@ -339,8 +353,9 @@ export const servicesData = [
     id: 15,
     title: 'Staff Augmentation',
     slug: 'staff-augmentation',
-    icon: '👥',
     shortDesc: 'Flexible staff augmentation to scale your team.',
+    icon: '👥',
+    accent: 'orange',
     description: 'We provide skilled professionals to augment your team and accelerate your projects. Our staff augmentation services give you the flexibility to scale your workforce based on project needs.',
     benefits: [
       'Flexible scaling',
@@ -363,8 +378,9 @@ export const servicesData = [
     id: 16,
     title: 'Dedicated Developers',
     slug: 'dedicated-developers',
-    icon: '👨‍💻',
     shortDesc: 'Dedicated development teams for your projects.',
+    icon: '👨‍💻',
+    accent: 'amber',
     description: 'We provide dedicated developers who work exclusively on your projects, ensuring continuity, commitment, and high-quality delivery. Our developers integrate seamlessly with your team.',
     benefits: [
       'Full-time commitment',
@@ -387,8 +403,9 @@ export const servicesData = [
     id: 17,
     title: 'QA Testing',
     slug: 'qa-testing',
-    icon: '🧪',
     shortDesc: 'Comprehensive quality assurance and testing services.',
+    icon: '🧪',
+    accent: 'teal',
     description: 'We ensure your software meets the highest quality standards with comprehensive QA testing. Our testing experts identify and fix issues early, ensuring reliable and high-performing applications.',
     benefits: [
       'High-quality software',
@@ -411,8 +428,9 @@ export const servicesData = [
     id: 18,
     title: 'Maintenance & Support',
     slug: 'maintenance-support',
-    icon: '🔧',
     shortDesc: 'Reliable maintenance and support for your applications.',
+    icon: '🔧',
+    accent: 'orange',
     description: 'We provide comprehensive maintenance and support services to keep your applications running smoothly. Our team ensures high availability, performance, and security for your critical systems.',
     benefits: [
       'High availability',
@@ -430,17 +448,68 @@ export const servicesData = [
     ],
     technologies: ['Various tech stacks', 'Monitoring tools', 'Support systems'],
     process: ['Setup', 'Monitoring', 'Support', 'Optimization', 'Reporting']
-  }
+  },
+  {
+  id: 19, // Increment your IDs
+  title: 'Power BI Analytics',
+  slug: 'power-bi-analytics',
+  shortDesc: 'Transform raw data into actionable enterprise intelligence.',
+  icon: '📊',
+  accent: 'teal',
+  description: 'We build end-to-end business intelligence solutions using Power BI. From complex data modeling and ETL pipelines to intuitive, executive-level dashboards, we help you uncover the trends that drive your business forward.',
+  benefits: [
+    'Real-time data visualization and monitoring',
+    'Integrated data sources (SQL, API, Cloud, ERP)',
+    'Automated reporting for stakeholders',
+    'Scalable data warehousing architecture',
+    'Custom DAX-driven business logic'
+  ],
+  features: [
+    'Executive KPI Dashboards (Sales, Revenue, ROI)',
+    'Project Management & Productivity tracking',
+    'Predictive Growth & Trend analysis',
+    'Automated Data Transformation (ETL)',
+    'Mobile-ready dashboard accessibility'
+  ],
+  technologies: ['Power BI', 'DAX', 'Power Query', 'SQL Server', 'Azure Synapse', 'Excel'],
+  process: ['Data Audit', 'Modeling', 'Visualization', 'Testing', 'Deployment', 'Training']
+},
+{
+  id: 20,
+  title: 'SAP Consulting & Implementation',
+  slug: 'sap-consulting',
+  shortDesc: 'End-to-end SAP implementation, optimization, and seamless integration.',
+  icon: '🏢',
+  accent: 'orange',
+  description: 'We streamline your enterprise operations by implementing and optimizing SAP solutions. From S/4HANA migration to custom ABAP development and integration with external pricing and tax engines, we ensure your ERP works as a cohesive engine for business growth.',
+  benefits: [
+    'Unified enterprise resource planning',
+    'Streamlined cross-departmental workflows',
+    'Real-time financial and operational visibility',
+    'Regulatory compliance (GST/VAT/Tax automation)',
+    'Scalable architecture for global operations'
+  ],
+  features: [
+    'S/4HANA Implementation & Migration',
+    'Custom ABAP & Fiori Development',
+    'SAP Integration (API-led architecture)',
+    'Business Process Re-engineering',
+    'Automated Tax & Financial Modules'
+  ],
+  technologies: ['SAP S/4HANA', 'SAP Fiori', 'ABAP', 'SAP BTP', 'SAP SuccessFactors'],
+  process: ['Process Discovery', 'Gap Analysis', 'Solution Design', 'Implementation', 'User Training', 'Post-Go-Live Support']
+}
 ];
 
-export const getServiceBySlug = (slug) => {
+// Helper functions
+export function getServiceBySlug(slug) {
   return servicesData.find(service => service.slug === slug);
-};
+}
 
-export const getRelatedServices = (slug, count = 3) => {
+export function getRelatedServices(slug, count = 3) {
   const current = getServiceBySlug(slug);
   if (!current) return [];
   return servicesData
     .filter(s => s.id !== current.id)
     .slice(0, count);
-};
+}

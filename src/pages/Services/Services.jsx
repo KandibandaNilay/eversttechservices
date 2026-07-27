@@ -1,66 +1,64 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import PageBanner from '../../components/common/PageBanner';
-import SectionTitle from '../../components/common/SectionTitle';
-import Card from '../../components/common/Card';
-import Button from '../../components/common/Button';
-import CTA from '../../components/common/CTA';
+import { ArrowRight, ChevronRight, Briefcase } from 'lucide-react';
 import { servicesData } from '../../data/servicesData';
 
-const Services = () => {
+export default function Services() {
   return (
-    <>
-      <PageBanner 
-        title="Our Services"
-        subtitle="Comprehensive technology solutions designed to drive your business forward"
-        breadcrumbs={[{ label: 'Services' }]}
-      />
-
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <SectionTitle 
-            title="What We Offer"
-            subtitle="Explore our full range of technology services"
-            badge="Services"
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {servicesData.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.03 }}
-              >
-                <Card hover className="h-full group">
-                  <Link to={`/services/${service.slug}`} className="block h-full">
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-xl font-bold text-darkBlue group-hover:text-royalBlue transition mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{service.shortDesc}</p>
-                    <div className="mt-4 inline-flex items-center text-royalBlue font-medium text-sm group-hover:gap-2 transition-all">
-                      Learn More <ArrowRight size={14} className="ml-1 group-hover:ml-2 transition-all" />
-                    </div>
-                  </Link>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+    <div className="bg-[#0A0E14] text-slate-100 min-h-screen py-20 font-sans">
+      
+      {/* --- HERO --- */}
+      <section className="container mx-auto px-6 mb-16 pt-10 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
+          Our <span className="text-amber-500">Capabilities</span>
+        </h1>
+        <p className="text-slate-400 max-w-2xl mx-auto">
+          Explore our complete range of 18+ enterprise technology solutions.
+        </p>
       </section>
 
-      <CTA 
-        title="Need a Custom Solution?"
-        subtitle="Let's discuss your specific requirements and find the perfect solution for your business."
-        buttonText="Contact Us"
-        buttonLink="/contact"
-      />
-    </>
+      {/* --- SERVICES GRID (Optimized for many items) --- */}
+      <section className="container mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {servicesData.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.03 }} // Faster stagger for many items
+              className="h-full"
+            >
+              {/* Card wrapper */}
+              <div className="p-6 rounded-2xl bg-[#0D1117] border border-slate-800 hover:border-amber-500/50 transition-all h-full flex flex-col hover:-translate-y-1">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{service.title}</h3>
+                <p className="text-slate-400 text-xs leading-relaxed mb-4 flex-1">
+                  {service.shortDesc}
+                </p>
+                
+                {/* USE <Link> HERE - This fixes your navigation error */}
+                <Link 
+                  to={`/services/${service.slug}`} 
+                  className="inline-flex items-center text-sm font-semibold text-amber-500 hover:text-amber-400 transition-colors"
+                >
+                  View Details <ArrowRight size={14} className="ml-1" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      
+      {/* --- BOTTOM CTA --- */}
+      <section className="container mx-auto px-6 py-20 text-center">
+        <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 p-12 rounded-3xl border border-amber-500/20">
+          <h2 className="text-3xl font-bold text-white mb-4">Still need help?</h2>
+          <Link to="/contact" className="inline-block bg-amber-500 text-slate-950 px-8 py-3 rounded-lg font-bold">
+            Contact Us
+          </Link>
+        </div>
+      </section>
+    </div>
   );
-};
-
-export default Services;
+}
