@@ -43,11 +43,11 @@ const Navbar = () => {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="EverstTech Logo"
-            className="h-10 w-auto"
-          />
+<img
+  src={logo}
+  alt="EverstTech Logo"
+  className="h-10 w-auto brightness-150 contrast-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+/>
 
           <span className="text-2xl font-black text-white tracking-tighter">
             EVERST<span className="text-amber-500">TECH</span>

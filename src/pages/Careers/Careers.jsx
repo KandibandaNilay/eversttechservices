@@ -202,7 +202,7 @@ export default function Careers() {
                       <span className="text-amber-400/80 font-medium">{job.experience}</span>
                     </div>
                   </div>
-                  <Button href={`/eversttechservices/contact`} variant="outline" className="shrink-0 group-hover:border-amber-500/50 group-hover:text-amber-400">
+                  <Button href={`/contact`} variant="outline" className="shrink-0 group-hover:border-amber-500/50 group-hover:text-amber-400">
                     Apply Now <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
@@ -248,7 +248,7 @@ export default function Careers() {
           <p className="text-xl text-slate-300 mb-10 font-light max-w-2xl mx-auto">
             We are constantly seeking elite architects and engineers. Submit your profile, and we'll route it to the appropriate team lead.
           </p>
-          <Button variant="outline" className="text-lg px-8 py-4 bg-[#0A0E14]" href="/eversttechservices/contact">
+          <Button variant="outline" className="text-lg px-8 py-4 bg-[#0A0E14]" href="/contact">
             Reach Out Directly
           </Button>
         </div>

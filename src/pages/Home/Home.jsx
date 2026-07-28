@@ -5,6 +5,7 @@ import {
   Zap, Rocket, Award, Star, Search, ClipboardList, 
   TestTube, Wrench, Terminal, ArrowUpRight, Plus, Minus
 } from 'lucide-react';
+import { TypeAnimation } from "react-type-animation";
 
 // --- INLINED DATA TO MAKE COMPONENT STANDALONE ---
 const servicesData = [
@@ -46,7 +47,7 @@ const Button = ({
   children,
   variant = "primary",
   className = "",
-  href = "/eversttechservices/contact",
+  href = "/contact",
 }) => {
   const base =
     "inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200 ease-in-out";
@@ -133,11 +134,27 @@ export default function Home() {
 
   {/* Heading */}
   <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] tracking-tight text-white text-center mx-auto max-w-4xl">
-    Empowering Businesses Through
-    <span className="block bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-clip-text text-transparent mt-2">
-      Innovative Digital Solutions
-    </span>
-  </h1>
+  Empowering Businesses Through
+
+  <span className="block mt-2 bg-gradient-to-r from-amber-400 via-orange-300 to-amber-500 bg-clip-text text-transparent">
+    <TypeAnimation
+      sequence={[
+        "Innovative Digital Solutions",
+        2500,
+        "Cloud & AI Solutions",
+        2500,
+        "Enterprise Software",
+        2500,
+        "Digital Transformation",
+        2500,
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+      cursor={true}
+    />
+  </span>
+</h1>
 
   {/* Description */}
 <p className="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl font-light text-center mx-auto">
@@ -151,7 +168,7 @@ export default function Home() {
 <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
   <Button
     variant="primary"
-    href="/eversttechservices/services"
+    href="/services"
   >
     Explore Our Services
     <ArrowRight size={18} className="ml-2" />
@@ -159,7 +176,7 @@ export default function Home() {
 
   <Button
     variant="outline"
-    href="/eversttechservices/contact"
+    href="/contact"
   >
     Schedule a Consultation
   </Button>
@@ -249,39 +266,114 @@ export default function Home() {
       </section>
 
       {/* --- SERVICES --- */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <SectionTitle title="Engineered For Modern Business" subtitle="Comprehensive technology capabilities tailored to propel your market leadership." badge="Solutions Capabilities" />
-          
-          <div className="mt-16 divide-y divide-slate-800/80 border-y border-slate-800/80">
-            {servicesData.map((service, index) => (
-              <motion.a 
-                key={service.id} href="/eversttechservices/services"
-                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }}
-                className="group grid grid-cols-1 md:grid-cols-12 items-center gap-6 py-8 px-4 hover:bg-amber-500/[0.02] transition-colors"
-              >
-                <span className="md:col-span-1 font-mono text-sm text-amber-500/50 group-hover:text-amber-400 transition-colors">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="md:col-span-1 flex items-center">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                    <Code className="w-5 h-5" />
-                  </div>
-                </div>
-                <h3 className="md:col-span-4 text-xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="md:col-span-5 text-slate-400 text-sm leading-relaxed font-light">
-                  {service.shortDesc}
-                </p>
-                <span className="md:col-span-1 flex md:justify-end">
-                  <ArrowUpRight className="w-6 h-6 text-slate-600 group-hover:text-amber-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-                </span>
-              </motion.a>
-            ))}
+
+  {/* ===== OUR EXPERTISE ===== */}
+<section className="py-24 relative">
+  <div className="container mx-auto px-6">
+
+    <SectionTitle
+      badge="OUR EXPERTISE"
+      title="Enterprise Technology Solutions"
+      subtitle="Delivering secure, scalable and innovative digital solutions that empower businesses to grow faster and transform digitally."
+    />
+
+    <div className="grid lg:grid-cols-2 gap-8 mt-16">
+
+      {servicesData.map((service, index) => (
+        <motion.div
+          key={service.id}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          whileHover={{ y: -8 }}
+          className="group relative overflow-hidden rounded-3xl border border-slate-800 bg-[#0D1117] p-8 transition-all duration-500 hover:border-amber-500/40 hover:shadow-[0_0_40px_rgba(245,158,11,0.15)]"
+        >
+
+          {/* Background Glow */}
+          <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-amber-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
+
+          {/* Number */}
+          <span className="absolute top-6 right-6 text-5xl font-black text-slate-800 group-hover:text-slate-700 transition">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          {/* Icon */}
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-3xl mb-6 group-hover:rotate-6 transition-transform duration-500">
+            <Code className="w-8 h-8" />
           </div>
-        </div>
-      </section>
+
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-white group-hover:text-amber-400 transition">
+            {service.title}
+          </h3>
+
+          {/* Description */}
+          <p className="mt-4 text-slate-400 leading-relaxed">
+            {service.shortDesc}
+          </p>
+
+          {/* Features */}
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="px-3 py-1 rounded-full bg-slate-800 text-xs text-slate-300">
+              Enterprise Ready
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-800 text-xs text-slate-300">
+              Scalable
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-800 text-xs text-slate-300">
+              Secure
+            </span>
+          </div>
+
+          {/* Learn More */}
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 mt-8 font-semibold text-amber-400 group-hover:gap-4 transition-all"
+          >
+            Learn More
+            <ArrowRight className="w-5 h-5" />
+          </a>
+
+        </motion.div>
+      ))}
+
+    </div>
+
+    {/* Bottom CTA */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.4 }}
+      className="mt-20 rounded-3xl border border-amber-500/20 bg-gradient-to-r from-amber-500/10 via-[#10151C] to-orange-500/10 p-10 text-center"
+    >
+
+      <h2 className="text-3xl font-bold text-white">
+        Need a Custom Technology Solution?
+      </h2>
+
+      <p className="mt-4 max-w-2xl mx-auto text-slate-300">
+        Every business is unique. Our experts design and develop tailored
+        software solutions that align perfectly with your goals, processes,
+        and future growth.
+      </p>
+
+      <Button
+        variant="primary"
+        href="/contact"
+        className="mt-8"
+      >
+        Schedule a Consultation
+        <ArrowRight className="ml-2 w-5 h-5" />
+      </Button>
+
+    </motion.div>
+
+  </div>
+</section>
 
       <SectionDivider />
 
